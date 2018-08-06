@@ -1,9 +1,9 @@
 /*Nome:Thales Junior de Souza Gomes RA:201611117
 Estrutura de dados 1 2017.2
 lista 5.*/
-#include "teste.h"
+#include "Lista5.h"
 #include <stdio.h>
-#include <stdlib.h>
+
 
 void Iniciar(Lista *L){
      L->nelem = 0;
@@ -220,4 +220,5 @@ void Esvaziar(Lista *L, Lista *L2, Lista *L3){
 	L->nelem=0;
 	L2->nelem=0;
 	L3->nelem=0;
-	}
+}
+

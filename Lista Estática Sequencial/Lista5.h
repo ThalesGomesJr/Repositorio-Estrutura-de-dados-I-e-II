@@ -49,3 +49,5 @@ void Exibir(Lista *L);
 void Exibirl2(Lista *L2);
 
 void Esvaziar(Lista *L, Lista *L2, Lista *L3);
+
+

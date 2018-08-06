@@ -5,7 +5,7 @@ lista 5.*/
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "teste.h"
+#include "Lista5.h"
 
 int main(){
 	int op,pos;
@@ -29,7 +29,7 @@ int main(){
 		printf("\n8 - Intercalar");
 		printf("\n9 - Exibir L3");
 		printf("\n10 - Inverter L1");
-		printf("\n11 - Lista L2 contendo:elem,que contÃ©m um elemento de L1 e count");
+		printf("\n11 - Lista L2 contendo:elem,que contém um elemento de L1 e count");
 		printf("\n12 - Os elementos que aparecem o maior e o menor numero de vezes em L1");
 		printf("\n13 - Esvaziar");
 		printf("\n14 - Sair");
