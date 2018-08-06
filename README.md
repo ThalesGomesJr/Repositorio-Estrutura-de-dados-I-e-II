@@ -1,3 +1,3 @@
-# Estudo-Maratona-de-Programa-o
+# Estudo-Maratona-de-Programação
  C e C++ 
  Lista encadeada 
