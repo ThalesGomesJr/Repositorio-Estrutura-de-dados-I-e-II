@@ -222,3 +222,4 @@ void Esvaziar(Lista *L, Lista *L2, Lista *L3){
 	L3->nelem=0;
 }
 
+MUDEI AQUI
