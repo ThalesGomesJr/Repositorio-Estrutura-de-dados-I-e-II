@@ -2,22 +2,22 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define MAXVERTICES 100
+#define MAXVERTICES 200
 
-void dijkstra(int vertices,int origem,int destino,int *custos){ 
-    int i,v,ant[MAXVERTICES],z[MAXVERTICES]; 
-    double min,dist[MAXVERTICES]; 
+void dijkstra(int vertices,int origem,int destino,int *custos){
+    int i,v,ant[MAXVERTICES],z[MAXVERTICES];
+    double min,dist[MAXVERTICES];
 
 // OBS: O usuário enxerga os vértices como rotulados de 1 a "vértices",
-// mas o programa armazena as informações usando os elementos 0 dos 
-// dos vetores. Dessa formar é preciso subtrair 1 de "origem" e "destino" 
+// mas o programa armazena as informações usando os elementos 0 dos
+// dos vetores. Dessa formar é preciso subtrair 1 de "origem" e "destino"
 // ao mapeá-los nos vetores.
 
   //Iniciando
 
     for (i=0;i<vertices;i++){
         if (custos[(origem-1)*vertices+i]!=-1) {
-            ant[i]=origem-1; 
+            ant[i]=origem-1;
             dist[i]=custos[(origem-1)*vertices+i];
         }
         else {
@@ -28,7 +28,7 @@ void dijkstra(int vertices,int origem,int destino,int *custos){
     }
     z[origem-1]=1;
     dist[origem-1]=0;
-    
+
     do { //Encontrando o vértice que deve entrar em z.
         min=HUGE_VAL;
         for(i=0;i<vertices;i++){
@@ -45,8 +45,8 @@ void dijkstra(int vertices,int origem,int destino,int *custos){
         z[v]=1;
         for (i=0;i<vertices;i++)
             if (!z[i]) {
-            if(custos[v*vertices+i]!=-1 && dist[v]+custos[v*vertices+i]<dist[i]){ 
-                dist[i]=dist[v]+custos[v*vertices+i];ant[i]=v; 
+            if(custos[v*vertices+i]!=-1 && dist[v]+custos[v*vertices+i]<dist[i]){
+                dist[i]=dist[v]+custos[v*vertices+i];ant[i]=v;
                 }
             }
         }
@@ -55,7 +55,7 @@ void dijkstra(int vertices,int origem,int destino,int *custos){
     //Exibindo resultado
     if(min==HUGE_VAL)
         printf("\nNo digrafo dado não existe caminho entre os vértices %d e %d !!\n",origem,destino);
-    
+
     else {
         printf("\nO caminho de custo mínimo entre os vértices %d e %d  é (na ordem reversa):\n",origem,destino);
         i=destino;
@@ -67,13 +67,13 @@ void dijkstra(int vertices,int origem,int destino,int *custos){
         }
         printf("\nO custo deste caminho é: %d\n",(int) dist[destino-1]);
     }
-  
+
 }//Final da função
 
 
 int main() {
-    char lixo[50];   
-    int i,custo, vertices=0,origem,destino,*custos=NULL; 
+    char lixo[50];
+    int i,custo, vertices=0,origem,destino,*custos=NULL;
     int opcao;
     do {
         printf("Escolha sua opção:\n");
@@ -95,7 +95,7 @@ int main() {
                     free(custos);
                 }
                 custos=(int *) malloc(sizeof(int)*vertices*vertices);
-                for (i=0;i<=vertices*vertices;i++){ 
+                for (i=0;i<=vertices*vertices;i++){
                     custos[i]=-1;
                 }
                 printf("Agora digite as arestas\n");
@@ -119,7 +119,7 @@ int main() {
                 } while (origem);
                 scanf("%s",&lixo);
             break;
-            
+
 
             case 2://Caminho minimo
                 if (vertices>0) {
@@ -128,7 +128,7 @@ int main() {
                     printf("Vértice origem (entre 1 e %d): ",vertices);
                     scanf("%d",&origem);
                 }while(origem<1 || origem>vertices);
-        
+
                 do {
                     printf("Vértice destino (entre 1 e %d, menos %d): ",vertices,origem);
                     scanf("%d",&destino);
@@ -136,7 +136,7 @@ int main() {
 
                 dijkstra(vertices,origem,destino,custos);
                 scanf("%s",&lixo);
-                }  
+                }
             break;
             }
         }while (opcao!=3);
