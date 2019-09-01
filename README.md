@@ -2,5 +2,5 @@
  C e C++
  /Lista Sequencial
  /Lista Encadeada/
- Grafos//
- Desenvolvedor Thales Junior de Souza Gomes
+ Grafos/
+ - Desenvolvedor Thales Junior de Souza Gomes
